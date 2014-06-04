@@ -20,9 +20,9 @@ struct point{
 	bool cmp(const point &b,const point &a){
 		if(b.begin == a.begin){
 			if(b.num*b.l == a.num*a.l){
-				return b.num < a.num;
+				return b.num > a.num;
 			}
-			return b.num*b.l < a.num*a.l;
+			return b.num*b.l > a.num*a.l;
 		}
 		return b.begin < a.begin;
 	}
@@ -38,8 +38,8 @@ int main(int argc,char **argv){
 	int num_of_first;//记录第一轮筛选之后得出的结果个数
 	int num_of_second;//记录第二轮筛选之后得出的结果个数
 	while(scanf("%s %d %d",po[i].str,&po[i].num,&po[i].begin)!=EOF){
-		po[i].l=strlen(po[i].str);
-		po[i].end=po[i].begin+po[i].l;
+		po[i].l=strlen(po[i].str)*po[i].num;
+		po[i].end=po[i].begin+po[i].l-1;
 		i++;
 	}
 	sort(po,po+i,cmp);

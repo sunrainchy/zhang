@@ -11,6 +11,3 @@ int main(){
 	cout<<"over"<<endl;
 	return 0;
 }
-/*
- * add by chy for fun
- */
